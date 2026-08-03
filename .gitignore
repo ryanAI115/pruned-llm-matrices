@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+.venv/
+models/
+activations/
+dataset/
+reproduced/
+*.tar.zst
+*.part
+

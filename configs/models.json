@@ -1,0 +1,23 @@
+{
+  "qwen25_3b": {
+    "model_id": "Qwen/Qwen2.5-3B-Instruct",
+    "label": "Qwen2.5-3B-Instruct",
+    "layers": 36
+  },
+  "opt_2p7b": {
+    "model_id": "facebook/opt-2.7b",
+    "label": "OPT-2.7B",
+    "layers": 32
+  },
+  "llama2_7b": {
+    "model_id": "meta-llama/Llama-2-7b-hf",
+    "label": "Llama-2-7B-hf",
+    "layers": 32
+  },
+  "mistral7b_v03": {
+    "model_id": "mistralai/Mistral-7B-v0.3",
+    "label": "Mistral-7B-v0.3",
+    "layers": 32
+  }
+}
+

@@ -1,0 +1,20 @@
+{
+  "name": "All-Layer Pruned LLM Matrix Collection",
+  "format_version": 1,
+  "matrix_format": "Matrix Market pattern coordinate general",
+  "matrix_count": 1584,
+  "source_weight_count": 264,
+  "model_count": 4,
+  "methods": [
+    "global_mag_s70",
+    "wanda_s70",
+    "global_mag_s80",
+    "wanda_s80",
+    "global_mag_s90",
+    "wanda_s90"
+  ],
+  "modules": ["q_proj", "o_proj"],
+  "wanda_score": "abs(weight) * sqrt(mean(input_activation^2))",
+  "scope": "binary sparse-kernel layout patterns; no model-quality claim"
+}
+

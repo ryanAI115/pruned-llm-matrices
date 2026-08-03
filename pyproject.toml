@@ -1,0 +1,10 @@
+[project]
+name = "pruned-llm-matrices"
+version = "1.0.0"
+description = "Reproduction tools for an all-layer pruned LLM sparsity-pattern collection"
+requires-python = ">=3.10"
+license = {text = "MIT"}
+
+[tool.ruff]
+line-length = 100
+
