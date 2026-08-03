@@ -53,7 +53,7 @@ For a manual download, concatenate a model's parts in numeric order first.
 Extraction then requires `zstd` and `tar`:
 
 ```bash
-cat pruned_llm_qwen25_3b.tar.zst.part-* > pruned_llm_qwen25_3b.tar.zst
+cat pruned_llm_qwen25_3b.tar.zst.chunk-* > pruned_llm_qwen25_3b.tar.zst
 tar --use-compress-program=unzstd -xf pruned_llm_qwen25_3b.tar.zst
 ```
 
