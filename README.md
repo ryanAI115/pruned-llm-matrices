@@ -1,6 +1,6 @@
-# All-Layer Pruned LLM Matrix Collection
+# Pruned LLM Matrix Collection
 
-This anonymous artifact contains code and data for reproducing a collection of
+This repo contains code and data for reproducing a collection of
 1,584 sparse attention-projection matrices derived from four open-weight LLMs.
 The released matrices cover every transformer block, both square attention
 projections used by the study, two pruning scores, and three sparsity levels.
