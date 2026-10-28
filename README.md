@@ -11,6 +11,22 @@ They are intended for sparse-kernel, storage-format, feature-extraction, and
 matrix-structure research. They do not establish post-pruning language-model
 quality.
 
+## Extended source index (2026-10-28)
+
+An additional source index covers **2,532 matrices**: the existing 1,584-file
+release, 528 Wanda++ patterns generated from the same four source LLMs, and
+420 matrices extracted from published DeepSeek-R1-Distill-Qwen-1.5B pruning
+checkpoints (140 each at 70%, 80%, and 90% sparsity).
+
+See [sources and download instructions](docs/additional_sources.md), the
+[complete index](data/extended_manifest.csv), and the
+[source/version metadata](data/additional_sources.json).
+The original 1,584-file manifest and downloader continue to describe the
+existing release. Download the exact new Wanda++ masks from the
+[Wanda++ data release](https://github.com/ryanAI115/pruned-llm-matrices/releases/tag/wandapp-patterns-20261028);
+DeepSeek patterns can be extracted from the frozen upstream checkpoints
+using the instructions and helper linked above.
+
 ## Dataset at a glance
 
 | Model | Hugging Face ID | Layers | Projections | Matrices |
