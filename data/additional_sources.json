@@ -1,0 +1,139 @@
+{
+  "format_version": 1,
+  "scope": "Source/download index; no kernel measurements, model-quality claims, or experiment changes.",
+  "matrix_count": 2532,
+  "original_paper_80_90_count": 1056,
+  "original_support70_count": 528,
+  "wandapp_count": 528,
+  "deepseek_counts": {
+    "70": 140,
+    "80": 140,
+    "90": 140
+  },
+  "existing_release": {
+    "repository": "https://github.com/ryanAI115/pruned-llm-matrices",
+    "commit": "92af33c97ec4ef50e291c3d9aed373615221adee",
+    "matrix_count": 1584,
+    "index": "data/archives.json",
+    "download": "python scripts/download_dataset.py --output-dir dataset",
+    "format": "Matrix Market pattern coordinate general",
+    "transport": "existing Google Drive parts with per-part and archive SHA-256"
+  },
+  "wandapp": {
+    "matrix_count": 528,
+    "source_weight_count": 264,
+    "paper": "https://aclanthology.org/2025.findings-acl.224/",
+    "implementation": "Our Eq.4/Algorithm1 q/o subset adaptation; not an official implementation or upstream-generated dataset.",
+    "source_models": [
+      [
+        "Qwen/Qwen2.5-3B-Instruct",
+        "aa8e72537993ba99e69dfaafa59ed015b17504d1"
+      ],
+      [
+        "facebook/opt-2.7b",
+        "905a4b602cda5c501f1b3a2650a4152680238254"
+      ],
+      [
+        "meta-llama/Llama-2-7b-hf",
+        "01c7f73d771dfac7d292323805ebc428287df4f9"
+      ],
+      [
+        "mistralai/Mistral-7B-v0.3",
+        "caa1feb0e54d415e2df31207e5f4e273e33509b1"
+      ]
+    ],
+    "sparsities": [
+      0.8,
+      0.9
+    ],
+    "calibration_prompts": 16,
+    "max_length": 128,
+    "alpha": 100,
+    "optimizer": "RMSprop",
+    "learning_rate": 3e-07,
+    "RO_iterations": 5,
+    "RO_samples_per_iteration": 4,
+    "generation_seed": 20261026,
+    "availability": "Exact frozen binary masks distributed as four public GitHub Release assets.",
+    "important": "These archives contain the exact generated masks; dense-model links only identify their input checkpoints.",
+    "public_release_url": "https://github.com/ryanAI115/pruned-llm-matrices/releases/tag/wandapp-patterns-20261028",
+    "archives": [
+      {
+        "model_key": "llama2_7b",
+        "matrix_count": 128,
+        "file_name": "wandapp_llama2_7b_s80_s90.tar.gz",
+        "size_bytes": 170621712,
+        "sha256": "bcf1665fc9eed1ec6d5ffbf87cdb91ce87789f17fc82cc9ec20bf7413d5bd8f3",
+        "url": "https://github.com/ryanAI115/pruned-llm-matrices/releases/download/wandapp-patterns-20261028/wandapp_llama2_7b_s80_s90.tar.gz"
+      },
+      {
+        "model_key": "mistral7b_v03",
+        "matrix_count": 128,
+        "file_name": "wandapp_mistral7b_v03_s80_s90.tar.gz",
+        "size_bytes": 178824941,
+        "sha256": "898a1f176dc5754b272de8df276048639159f3c64284fe8558b154244a6af6e3",
+        "url": "https://github.com/ryanAI115/pruned-llm-matrices/releases/download/wandapp-patterns-20261028/wandapp_mistral7b_v03_s80_s90.tar.gz"
+      },
+      {
+        "model_key": "opt_2p7b",
+        "matrix_count": 128,
+        "file_name": "wandapp_opt_2p7b_s80_s90.tar.gz",
+        "size_bytes": 66597749,
+        "sha256": "f72039bf294030da74e503215036ffb9557c5fadf444a47a8fec857f3571f8e4",
+        "url": "https://github.com/ryanAI115/pruned-llm-matrices/releases/download/wandapp-patterns-20261028/wandapp_opt_2p7b_s80_s90.tar.gz"
+      },
+      {
+        "model_key": "qwen25_3b",
+        "matrix_count": 144,
+        "file_name": "wandapp_qwen25_3b_s80_s90.tar.gz",
+        "size_bytes": 48458719,
+        "sha256": "e003bf7f59342fe38027a69bd95d75afad91321565951d3f429ad7b3fc2b818d",
+        "url": "https://github.com/ryanAI115/pruned-llm-matrices/releases/download/wandapp-patterns-20261028/wandapp_qwen25_3b_s80_s90.tar.gz"
+      }
+    ]
+  },
+  "deepseek": {
+    "source_repo_id": "AnKhanh/Deepseek-Distill-Qwen-prune",
+    "source_revision": "44b090355bcdad922866a23288c829733799d71e",
+    "base_model": "deepseek-ai/DeepSeek-R1-Distill-Qwen-1.5B",
+    "layers": 28,
+    "projections": [
+      "q_proj",
+      "o_proj",
+      "gate_proj",
+      "up_proj",
+      "down_proj"
+    ],
+    "exclusion_reason_for_k_v": "Original selected set requires both matrix dimensions >1000; narrow k/v tensors are not in this frozen 420-row inventory.",
+    "additional_pruning": false,
+    "checkpoints": [
+      {
+        "sparsity": 0.7,
+        "subfolder": "C4/1.5B/sparse70",
+        "matrices": 140,
+        "file": "model.safetensors",
+        "size_bytes": 3554214752,
+        "checkpoint_sha256": "a545bdd32f78014e6e5388fc8a79de8e618badf8d3e243372ceb99cb59fbadff",
+        "download_url": "https://huggingface.co/AnKhanh/Deepseek-Distill-Qwen-prune/resolve/44b090355bcdad922866a23288c829733799d71e/C4/1.5B/sparse70/model.safetensors"
+      },
+      {
+        "sparsity": 0.8,
+        "subfolder": "C4/1.5B/sparse80",
+        "matrices": 140,
+        "file": "model.safetensors",
+        "size_bytes": 3554214752,
+        "checkpoint_sha256": "a98a8e51938a1d2e2e490a258d4895cda0d7cac60ff145d6ce4f9982056a71e3",
+        "download_url": "https://huggingface.co/AnKhanh/Deepseek-Distill-Qwen-prune/resolve/44b090355bcdad922866a23288c829733799d71e/C4/1.5B/sparse80/model.safetensors"
+      },
+      {
+        "sparsity": 0.9,
+        "subfolder": "C4/1.5B/sparse90",
+        "matrices": 140,
+        "file": "model.safetensors",
+        "size_bytes": 3554214752,
+        "checkpoint_sha256": "b72612c1c3823c8591fe8a64534bf31435941c99787557a18226e212c024c36b",
+        "download_url": "https://huggingface.co/AnKhanh/Deepseek-Distill-Qwen-prune/resolve/44b090355bcdad922866a23288c829733799d71e/C4/1.5B/sparse90/model.safetensors"
+      }
+    ]
+  }
+}
